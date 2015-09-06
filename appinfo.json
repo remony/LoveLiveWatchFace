@@ -1,0 +1,34 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "remonasebi@gmail.com",
+    "longName": "Love Live",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "data/lovebk.png",
+                "name": "IMAGE_LOVEBK",
+                "type": "raw"
+            },
+            {
+                "file": "fonts/y6oxFxU60dYw9khW6q8jGw.ttf",
+                "name": "MONOTON_47",
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Love Live",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "1204e4be-6096-49f3-964d-4f9a9efaaae4",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
