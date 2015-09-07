@@ -18,7 +18,7 @@ static void update_time() {
   // Write the current hours and minutes into the buffer
   if(clock_is_24h_style() == true) {
     // Use 24 hour format
-    strftime(buffer, sizeof("00:00"), "%H%n%M", tick_time);
+    strftime(buffer, sizeof("00:00"), "%H:%M", tick_time);
   } else {
     // Use 12 hour format
     
@@ -41,16 +41,16 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
   //Creating the text layer
-  s_custom_font_46 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_MONOTON_47));
+  s_custom_font_46 = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_MONOTON_40));
 
 
-  s_time_layer = text_layer_create(GRect(5, 10, bounds.size.w, bounds.size.h));
+  s_time_layer = text_layer_create(GRect(0, 60, bounds.size.w, bounds.size.h));
   text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_text_color(s_time_layer, GColorWhite);
+  text_layer_set_text_color(s_time_layer, GColorLightGray);
   text_layer_set_text(s_time_layer, "00:00");
                                   
   // Improve the layout to be more like a watchface
-  text_layer_set_font(s_time_layer, s_custom_font_60);
+  text_layer_set_font(s_time_layer, s_custom_font_46);
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
   //image
@@ -72,6 +72,7 @@ static void main_window_load(Window *window) {
 
 static void main_window_unload(Window *window) {
   text_layer_destroy(s_time_layer);
+  fonts_unload_custom_font(s_custom_font_46);
   bitmap_layer_destroy(s_bitmap_layer);
 }
 
